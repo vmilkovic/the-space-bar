@@ -1,63 +1,3 @@
-body {
-    position: relative;
-    background: #efefee;
-    min-height: 45rem;
-    padding-bottom: 80px;
-}
-
-html {height:100%}
-
-/* NAVIGATION */
-
-.navbar-bg {
-    background: url('../images/space-nav.jpg');
-    background-size: 80%;
-}
-
-.dropdown-menu, .dropdown-menu.show {
-    right: 0;
-}
-
-.space-brand {
-    color: #fff;
-    font-weight: bold;
-}
-
-.nav-profile-img {
-    width: 50px;
-    border: 1px solid #fff;
-}
-
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    color: #efefee;
-}
-
-/* ADVERTISEMENT */
-
-.ad-space {
-    background: #fff;
-    border-radius: 5px;
-    border-top: 5px solid green;
-}
-
-.advertisement-img {
-    width: 150px;
-    height: auto;
-    border: 2px solid #efefee;
-    border-radius: 5px;
-}
-
-.advertisement-text {
-    font-weight: bold;
-}
-
-.quote-space {
-    background: #fff;
-    margin-top: 30px;
-    border-radius: 5px;
-    border-top: 5px solid hotpink;
-}
-
 /* ARTICLES */
 
 .main-article {
@@ -118,24 +58,6 @@ html {height:100%}
 
 .article-details {
     font-size: .8em;
-}
-
-/* PROFILE */
-
-.profile-img {
-    width: 150px;
-    height: auto;
-    border: 2px solid #fff;
-}
-
-.profile-name {
-    font-size: 1.5em;
-}
-
-.my-article-container {
-    background: #FFBC49;
-    border: solid 1px #efefee;
-    border-radius: 5px;
 }
 
 
@@ -217,26 +139,4 @@ html {height:100%}
     .comment-container {
         max-width: 280px;
     }
-}
-
-
-
-/* FOOTER */
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #fff;
-  margin-top: 10px;
-}
-
-/* Sortable */
-.sortable-ghost {
-    background-color: lightblue;
-}
-.drag-handle {
-    cursor: grab;
 }

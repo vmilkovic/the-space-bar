@@ -2,16 +2,14 @@
 
 {% block javascripts %}
     {{ parent() }}
-
-    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
-    <script src="{{ asset('js/algolia-autocomplete.js') }}"></script>
-    <script src="{{ asset('js/admin_article_form.js') }}"></script>
+    
+    {{ encore_entry_script_tags('admin_article_form') }}
 {% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ asset('css/algolia-autocomplete.css') }}">
+    {{ encore_entry_link_tags('admin_article_form') }}
 {% endblock %}
 
 {% block content_body %}

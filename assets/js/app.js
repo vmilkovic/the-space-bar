@@ -8,7 +8,7 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import '../css/app.scss';
 
-import getNiceMessage from './get_nice_message';
+import getNiceMessage from './components/get_nice_message';
 import $ from 'jquery';
 
 // global.$ = $; -> only for legacy code

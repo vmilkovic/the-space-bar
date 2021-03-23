@@ -15,7 +15,9 @@
                 </span>
                 <span class="pl-2 article-details">
                     <span class="js-like-article-count">{{ article.heartCount }}</span>
-                    <a href="{{ path('article_toggle_heart', {slug: article.slug}) }}" class="fa fa-heart-o like-article js-like-article"></a>
+                    <a href="{{ path('article_toggle_heart', {slug: article.slug}) }}" 
+                        class="fa fa-heart-o like-article js-like-article"
+                        title="Click to Like"></a>
                 </span>
                 <span class="pl-2 article-details">
                     {% for tag in article.tags %}
@@ -81,5 +83,11 @@
 {% block javascripts %}
     {{ parent() }}
 
-    <script src="{{ asset('js/article_show.js') }}"></script>
+    {{ encore_entry_script_tags('article_show') }}
+{% endblock %}
+
+{% block stylesheet %}
+    {{ parent() }}
+
+    {{ encore_entry_link_tags('article_show') }}
 {% endblock %}

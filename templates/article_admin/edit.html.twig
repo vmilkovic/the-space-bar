@@ -30,13 +30,11 @@
 {% block stylesheets %}
     {{ parent() }}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" integrity="sha256-e47xOkXs1JXFbjjpoRr1/LhVcqSzRmGmPqsrUQeVs+g=" crossorigin="anonymous" />
+    {{ encore_entry_link_tags('admin_article_form') }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js" integrity="sha256-cs4thShDfjkqFGk5s2Lxj35sgSRr4MRcyccmi0WKqCM=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.3/Sortable.min.js" integrity="sha256-uNITVqEk9HNQeW6mAAm2PJwFX2gN45l8a4yocqsFI6I=" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/admin_article_form.js') }}"></script>
+    
+    {{ encore_entry_script_tags('admin_article_form') }}
 {% endblock %}

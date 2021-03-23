@@ -1,6 +1,18 @@
+import $ from 'jquery';
+import Dropzone from 'dropzone';
+import 'dropzone/dist/dropzone.css'
+import Sortable from 'sortablejs';
+
 Dropzone.autoDiscover = false;
 
 $(document).ready(function() {
+    const $autoComplete = $('.js-user-autocomplete');
+    if (!$autoComplete.is(':disabled')) {
+        import('./components/algolia-autocomplete').then((autocomplete) => {
+            autocomplete.default($autoComplete, 'users', 'email');
+        });
+    }
+
     const $referenceList = $('.js-reference-list');
     if ($referenceList[0]) {
         var referenceList = new ReferenceList($('.js-reference-list'));
@@ -37,6 +49,7 @@ $(document).ready(function() {
 class ReferenceList
 {
     constructor($element) {
+
         this.$element = $element;
         this.sortable = Sortable.create(this.$element[0], {
             handle: '.drag-handle',

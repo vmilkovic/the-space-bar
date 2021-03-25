@@ -3,7 +3,7 @@
 ## Symfonycast
 
 - [x] Webpack Encore: Frontend like a Pro!
-- [ ] All about Uploading Files in Symfony
+- [x] All about Uploading Files in Symfony
 
 ## Setup
 

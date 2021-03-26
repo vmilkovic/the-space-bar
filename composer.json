@@ -53,6 +53,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Milky\\LoremIpsumBundle\\": "lib/LoremIpsumBundle/src/",
             "App\\": "src/"
         }
     },

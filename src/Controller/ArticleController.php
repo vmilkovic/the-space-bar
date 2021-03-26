@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Milky\LoremIpsumBundle\MilkyIpsum;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Service\SlackClient;
@@ -43,6 +44,10 @@ class ArticleController extends AbstractController
         if ($article->getSlug() === 'khaaaaaan') {
             $slack->sendMessage('Kahn', 'Ah, Kirk, my old friend...');
         }
+        
+        $milkyIpsum = new MilkyIpsum();
+
+        $article->setContent($milkyIpsum->getParagraphs());
 
         return $this->render('article/show.html.twig', [
             'article' => $article,

@@ -4,6 +4,7 @@
 
 - [x] Webpack Encore: Frontend like a Pro!
 - [x] All about Uploading Files in Symfony
+- [ ] Creating a Reusable (& Amazing) Symfony Bundle
 
 ## Setup
 

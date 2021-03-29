@@ -1,0 +1,3 @@
+milky_lorem_ipsum:
+    min_sunshine: 5
+    word_provider: App\Service\CustomWordProvider

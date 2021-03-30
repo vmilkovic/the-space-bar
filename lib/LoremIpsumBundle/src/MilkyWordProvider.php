@@ -2,7 +2,9 @@
 
 namespace Milky\LoremIpsumBundle;
 
-class MilkyWordProvider {
+use Milky\LoremIpsumBundle\WordProviderInterface;
+
+class MilkyWordProvider implements WordProviderInterface {
 
     public function getWordList(): array {
         return [

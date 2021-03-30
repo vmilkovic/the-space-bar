@@ -2,7 +2,7 @@
 
 namespace Milky\LoremIpsumBundle;
 
-use Milky\LoremIpsumBundle\MilkyWordProvider;
+use Milky\LoremIpsumBundle\WordProviderInterface;
 
 /**
  * Generate random "lorem ipsum" text!
@@ -15,7 +15,7 @@ class MilkyIpsum {
 
     private $minSunshine;
 
-    public function __construct(MilkyWordProvider $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
+    public function __construct(WordProviderInterface $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
     {
         $this->wordProvider = $wordProvider;
         $this->unicornsAreReal = $unicornsAreReal;

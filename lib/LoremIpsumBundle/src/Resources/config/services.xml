@@ -5,11 +5,12 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="milky_lorem_ipsum.milky_ipsum" class="Milky\LoremIpsumBundle\MilkyIpsum" public="true">
-            <argument type="service" id="milky_lorem_ipsum.milky_word_provider"/>
+            <argument type="service" id="milky_lorem_ipsum.word_provider"/>
         </service>
 
         <service id="milky_lorem_ipsum.milky_word_provider" class="Milky\LoremIpsumBundle\MilkyWordProvider"/>
 
+        <service id="milky_lorem_ipsum.word_provider" alias="milky_lorem_ipsum.milky_word_provider" public="false" />
         <service id="Milky\LoremIpsumBundle\MilkyIpsum" alias="milky_lorem_ipsum.milky_ipsum" public="false"/>
     </services>
 </container>

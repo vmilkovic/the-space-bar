@@ -1,0 +1,4 @@
+_lorem_ipsum:
+    resource: '@MilkyLoremIpsumBundle/Resources/config/routes.xml'
+    prefix: /api/ipsum
+ 

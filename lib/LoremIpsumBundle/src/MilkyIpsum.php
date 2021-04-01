@@ -9,15 +9,20 @@ use Milky\LoremIpsumBundle\WordProviderInterface;
  */
 class MilkyIpsum {
 
-    private $wordProvider;
+    /**
+     * @var WordProviderInterface[]
+     */
+    private $wordProviders;
 
     private $unicornsAreReal;
 
     private $minSunshine;
 
-    public function __construct(WordProviderInterface $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
+    private $wordList;
+
+    public function __construct(iterable $wordProviders, bool $unicornsAreReal = true, $minSunshine = 3)
     {
-        $this->wordProvider = $wordProvider;
+        $this->wordProviders = $wordProviders;
         $this->unicornsAreReal = $unicornsAreReal;
         $this->minSunshine = $minSunshine;
     }
@@ -205,6 +210,20 @@ class MilkyIpsum {
 
     private function getWordList(): array
     {
-        return $this->wordProvider->getWordList();
+        if(null === $this->wordList){
+            $words = [];
+
+            foreach($this->wordProviders as $wordProvider ){
+                $words = array_merge($words, $wordProvider->getWordList());
+            }
+
+            if(count($words) <= 1){
+                throw new \Exception('Word list must contain al least 2 words!');
+            }
+
+            $this->wordList = $words;
+        }
+
+        return $this->wordList;
     }
 }

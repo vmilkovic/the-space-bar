@@ -2,14 +2,11 @@
 
 namespace App\Service;
 
-use Milky\LoremIpsumBundle\MilkyWordProvider;
+use Milky\LoremIpsumBundle\WordProviderInterface;
 
-class CustomWordProvider extends MilkyWordProvider {
+class CustomWordProvider implements WordProviderInterface {
 
     public function getWordList(): array {
-        $words = parent::getWordList();
-        $words[] = 'breach';
-
-        return $words;
+        return ['beach'];
     }
 }

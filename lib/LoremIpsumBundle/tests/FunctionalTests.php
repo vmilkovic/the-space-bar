@@ -6,6 +6,7 @@ use Milky\LoremIpsumBundle\MilkyIpsum;
 use Milky\LoremIpsumBundle\MilkyLoremIpsumBundle;
 use Milky\LoremIpsumBundle\WordProviderInterface;
 use PHPUnit\Framework\TestCase;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;

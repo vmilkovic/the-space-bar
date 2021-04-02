@@ -40,12 +40,16 @@
                 'attr': {'class': 'form-signin'}
             }) }}
                 <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                {{ form_row(registrationForm.firstName, {
+                    attr: { placeholder: 'First Name' }
+                }) }}
                 {{ form_row(registrationForm.email, {
                     attr: { placeholder: 'Email' }
                 }) }}
                 {{ form_row(registrationForm.plainPassword, {
                     attr: { placeholder: 'Password' }
                 }) }}
+                {{ form_row(registrationForm.subscribeToNewsletter) }}
                 {{ form_row(registrationForm.agreeTerms) }}
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">

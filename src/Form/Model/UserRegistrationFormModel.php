@@ -21,7 +21,14 @@ class UserRegistrationFormModel
     public $plainPassword;
 
     /**
+     * @Assert\NotBlank(message="Please enter your name!")
+     */
+    public $firstName;
+
+    /**
      * @Assert\IsTrue(message="I know, it's silly, but you must agree to our terms.")
      */
     public $agreeTerms;
+
+    public $subscribeToNewsletter;
 }

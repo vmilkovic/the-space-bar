@@ -22,7 +22,11 @@ class UserRegistrationFormType extends AbstractType
             // don't use password: avoid EVER setting that on a
             // field that might be persisted
             ->add('plainPassword', PasswordType::class)
+            ->add('firstName')
             ->add('agreeTerms', CheckboxType::class)
+            ->add('subscribeToNewsletter', CheckboxType::class, [
+                'required' => false,
+            ])
         ;
     }
 

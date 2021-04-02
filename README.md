@@ -5,6 +5,7 @@
 - [x] Webpack Encore: Frontend like a Pro!
 - [x] All about Uploading Files in Symfony
 - [x] Creating a Reusable (& Amazing) Symfony Bundle
+- [ ] Symfony Mailer: Love Sending Emails Again
 
 ## Setup
 

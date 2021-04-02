@@ -8,6 +8,8 @@ use App\Form\UserRegistrationFormType;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
@@ -43,7 +45,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $formAuthenticator)
+    public function register(MailerInterface $mailer, Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $formAuthenticator)
     {
         $form = $this->createForm(UserRegistrationFormType::class);
         $form->handleRequest($request);
@@ -53,6 +55,7 @@ class SecurityController extends AbstractController
             $userModel = $form->getData();
 
             $user = new User();
+            $user->setFirstName($userModel->firstName);
             $user->setEmail($userModel->email);
             $user->setPassword($passwordEncoder->encodePassword(
                 $user,
@@ -63,10 +66,20 @@ class SecurityController extends AbstractController
                 $user->agreeToTerms();
             }
 
+            $user->setSubscribeToNewsletter($userModel->subscribeToNewsletter);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
+            $email = (new Email())
+                ->from('alienmailer@example.com')
+                ->to($user->getEmail())
+                ->subject('Welcome to the Space Bar!')
+                ->text("Nice to meet you {$user->getFirstName()}!");
+
+            $mailer->send($email);
+            
             return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
                 $request,

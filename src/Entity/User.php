@@ -266,4 +266,14 @@ class User implements UserInterface
     {
         $this->agreedTermsAt = new \DateTime();
     }
+
+    public function isSubscribeToNewsletter()
+    {
+        return $this->subscribeToNewsletter;
+    }
+
+    public function setSubscribeToNewsletter(bool $subscribeToNewsletter)
+    {
+        $this->subscribeToNewsletter = $subscribeToNewsletter;
+    }
 }

@@ -1,0 +1,42 @@
+{% extends "email/emailBase.html.twig" %}
+
+{% block content %}
+    <hr>
+    <spacer size="20"></spacer>
+    <row>
+        <columns>
+            <p>
+                What a week {{ email.toName }}! Here's a quick review of what you've been up to on the Space Bar this week
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Comments</th>
+                </tr>
+                <tr>
+                    {% for article in articles %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ article.title }}</td>
+                            <td>{{ article.comments|length }}</td>
+                        </tr>
+                    {% endfor %}
+                </tr>
+            </table>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <center>
+                <spacer size="20"></spacer>
+                <button href="{{ url('app_homepage') }}">Check on the Space Bar</button>
+                <spacer size="20"></spacer>
+            </center>
+        </columns>
+    </row>
+{% endblock %}

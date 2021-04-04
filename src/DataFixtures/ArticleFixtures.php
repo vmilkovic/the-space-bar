@@ -59,7 +59,7 @@ EOF
 
             // publish most articles
             if ($this->faker->boolean(70)) {
-                $article->setPublishedAt($this->faker->dateTimeBetween('-100 days', '-1 days'));
+                $article->setPublishedAt($this->faker->dateTimeBetween('-2 weeks', '-1 days'));
             }
 
             $imageFilename = $this->fakeUploadImage();

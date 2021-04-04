@@ -170,6 +170,9 @@
             "ref": "523b4b0cfb88dc8637cb56e427e6be7718bdce32"
         }
     },
+    "lorenzo/pinky": {
+        "version": "1.0.5"
+    },
     "michelf/php-markdown": {
         "version": "1.8.0"
     },
@@ -618,6 +621,9 @@
         }
     },
     "twig/extra-bundle": {
+        "version": "v3.3.0"
+    },
+    "twig/inky-extra": {
         "version": "v3.3.0"
     },
     "twig/twig": {

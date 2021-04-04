@@ -71,6 +71,11 @@ class User implements UserInterface
      */
     private $agreedTermsAt;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $subscribeToNewsletter = false;
+
     public function __construct()
     {
         $this->apiTokens = new ArrayCollection();

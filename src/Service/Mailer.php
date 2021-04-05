@@ -28,7 +28,6 @@ class Mailer {
     public function sendWelomeMessage(User $user): TemplatedEmail{
         
         $email = (new TemplatedEmail())
-        ->from(new Address('alienmailer@example.com', 'The Space Bar'))
         ->to(new Address($user->getEmail(), $user->getFirstName()))
         ->subject('Welcome to the Space Bar!')
         ->htmlTemplate('email/welcome.html.twig')
@@ -51,7 +50,6 @@ class Mailer {
         $pdf = $this->pdf->getOutputFromHtml($html);
 
         $email = (new TemplatedEmail())
-        ->from(new Address('alienmailer@example.com', 'The Space Bar'))
         ->to(new Address($author->getEmail(), $author->getFirstName()))
         ->subject('Your weekly report on The Space Bar!')
         ->htmlTemplate('email/author-weekly-report.html.twig')

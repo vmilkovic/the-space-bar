@@ -26,6 +26,7 @@ services:
             $isDebug: '%kernel.debug%'
             $uploadsFilesystem: '@oneup_flysystem.uploads_filesystem_filesystem'
             $uploadedAssetsBaseUrl: '%uploads_base_url%'
+            string $publicDir: '%kernel.project_dir%/public'
 
     # custom aliases for autowiring
     Nexy\Slack\Client: '@nexy_slack.client'
